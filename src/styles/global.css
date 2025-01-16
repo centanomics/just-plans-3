@@ -1,0 +1,78 @@
+/* Variables */
+* {
+  --court-color: #003eaa;
+  --line-color: #FFF;
+  --out-color: #15141A;
+  --team-color: #ff13f0;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--out-color);
+  color: var(--line-color);
+}
+
+.teamColor {
+  color: var(--team-color)
+}
+
+main {
+  max-width: 1000px;
+  height: 95VH;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* main {
+  background-color: red;
+} */
+
+/* Court stuffs*/
+.court {
+  display: grid;
+  grid-template-rows: 100px 200px;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  justify-content:stretch;
+  align-content: stretch;
+}
+
+.spot {
+  background-color: var(--court-color);
+}
+
+.spot-1, .spot-5, .spot-6, .spot-10 {
+  background-color: var(--out-color);
+}
+
+.spot-1, .spot-2, .spot-3, .spot-4, .spot-5, .spot-7, .spot-8, .spot-9 {
+  border-top: 5px solid var(--line-color);
+}
+
+.spot-1, .spot-6 {
+  border-right: 5px solid var(--line-color);
+}
+
+.spot-5, .spot-10 {
+  border-left: 5px solid var(--line-color);
+}
+
+.spot-7, .spot-8, .spot-9 {
+  border-bottom: 5px solid var(--line-color);
+}
+
+/*player stuff*/
+.player {
+  background-color: var(--line-color);
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  border-radius: 50%;
+  border: 3px solid black;
+  text-align: center;
+  color: var(--out-color);
+}
