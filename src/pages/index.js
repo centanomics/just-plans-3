@@ -64,6 +64,7 @@ const IndexPage = () => {
             type='text'
             id='initials'
             minlength='2'
+            maxLength='2'
             name='initials'
             placeholder='Enter Player Initals'
           />
