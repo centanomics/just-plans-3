@@ -78,6 +78,12 @@ main {
   cursor: pointer;
 }
 
+.player span {
+  /* font-weight: bold; */
+  font-size: 25px;
+  line-height: 50px;
+}
+
 /* .player:hover {
   cursor: pointer;
 } */
@@ -95,6 +101,10 @@ main {
   .spot {
     border: none;
   }
+
+  /* .spot div {
+    margin: 0;
+  } */
 
   .spot-1, .spot-2, .spot-3, .spot-4, .spot-5, .spot-7, .spot-8, .spot-9 {
     border-right: 5px solid var(--line-color);
