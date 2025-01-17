@@ -21,6 +21,12 @@ const IndexPage = () => {
     setCurrentPlayer('');
     setIsDisabled(isDisabled ? !isDisabled : isDisabled);
     setCurrentPlayer(parseInt(e.target.id.slice(5)));
+
+    if (players[e.target.id.slice(5) - 1]) {
+      document.getElementById('initials').value =
+        players[e.target.id.slice(5) - 1];
+    }
+
     document.getElementById('initials').focus();
     console.log(parseInt(e.target.id.slice(5)) - 1);
   };
