@@ -53,11 +53,11 @@ main {
   border-top: 5px solid var(--line-color);
 }
 
-.spot-1, .spot-6 {
+.spot-1, .spot-10 {
   border-right: 5px solid var(--line-color);
 }
 
-.spot-5, .spot-10 {
+.spot-5, .spot-6 {
   border-left: 5px solid var(--line-color);
 }
 
@@ -75,4 +75,9 @@ main {
   border: 3px solid black;
   text-align: center;
   color: var(--out-color);
+  cursor: pointer;
 }
+
+/* .player:hover {
+  cursor: pointer;
+} */
