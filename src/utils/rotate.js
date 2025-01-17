@@ -1,8 +1,8 @@
-let justVibes = ['CM', '', 'AR', '', '', '', 'LO', '', '', ''];
-console.log(justVibes.slice(0, 3));
-console.log(justVibes.slice(3, 5));
-console.log(justVibes.slice(5, 8));
-console.log(justVibes.slice(8));
+// let justVibes = ['CM', '', 'AR', '', '', '', 'LO', '', '', ''];
+// console.log(justVibes.slice(0, 3));
+// console.log(justVibes.slice(3, 5));
+// console.log(justVibes.slice(5, 8));
+// console.log(justVibes.slice(8));
 
 //rotate players should return a rotated array
 
@@ -32,14 +32,16 @@ const rotatePlayers = (players) => {
   }
 
   //print rotated players
-  console.log('--------');
-  console.log(rotatedPlayers.slice(0, 3));
-  console.log(rotatedPlayers.slice(3, 5));
-  console.log(rotatedPlayers.slice(5, 8));
-  console.log(rotatedPlayers.slice(8));
+  // console.log('--------');
+  // console.log(rotatedPlayers.slice(0, 3));
+  // console.log(rotatedPlayers.slice(3, 5));
+  // console.log(rotatedPlayers.slice(5, 8));
+  // console.log(rotatedPlayers.slice(8));
 
   return rotatedPlayers;
 };
 
-justVibes = rotatePlayers(justVibes);
-justVibes = rotatePlayers(justVibes);
+module.exports = rotatePlayers;
+
+// justVibes = rotatePlayers(justVibes);
+// justVibes = rotatePlayers(justVibes);

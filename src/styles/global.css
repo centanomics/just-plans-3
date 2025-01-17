@@ -53,11 +53,11 @@ main {
   border-top: 5px solid var(--line-color);
 }
 
-.spot-1, .spot-6 {
+.spot-1, .spot-10 {
   border-right: 5px solid var(--line-color);
 }
 
-.spot-5, .spot-10 {
+.spot-5, .spot-6 {
   border-left: 5px solid var(--line-color);
 }
 
@@ -75,4 +75,101 @@ main {
   border: 3px solid black;
   text-align: center;
   color: var(--out-color);
+  cursor: pointer;
+}
+
+.player span {
+  /* font-weight: bold; */
+  font-size: 25px;
+  line-height: 50px;
+}
+
+/* .player:hover {
+  cursor: pointer;
+} */
+
+@media (max-width: 1000px) {
+  /* clearing court lines and resetting the grid for mobile*/
+  .court {
+    display: grid;
+    grid-template-columns: 200px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    justify-content:stretch;
+    align-content: stretch;
+  }
+
+  .spot {
+    border: none;
+  }
+
+  /* .spot div {
+    margin: 0;
+  } */
+
+  .spot-1, .spot-2, .spot-3, .spot-4, .spot-5, .spot-7, .spot-8, .spot-9 {
+    border-right: 5px solid var(--line-color);
+  }
+
+  .spot-1, .spot-10 {
+    border-bottom: 5px solid var(--line-color);
+  }
+  
+  .spot-5, .spot-6 {
+    border-top: 5px solid var(--line-color);
+  }
+  
+  .spot-7, .spot-8, .spot-9 {
+    border-left: 5px solid var(--line-color);
+  }
+
+/* reordering the spots accordingly for mobile */
+  .spot-1 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .spot-2 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .spot-3 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .spot-4 {
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  .spot-5 {
+    grid-column: 2;
+    grid-row: 5;
+  }
+
+  .spot-6 {
+    grid-column: 1;
+    grid-row: 5;
+  }
+
+  .spot-7 {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .spot-8 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .spot-9 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .spot-10 {
+    grid-column: 1;
+    grid-row: 1;
+  }
 }
