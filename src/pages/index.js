@@ -55,7 +55,14 @@ const IndexPage = () => {
             onTouchStart={handleOnClick}
             id='spot-1'
           >
-            <span className='playerInitials'>{players[0]}</span>
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-1'
+            >
+              {players[0]}
+            </span>
           </div>
         </div>
         <div className='spot spot-2'>
@@ -65,7 +72,14 @@ const IndexPage = () => {
             onTouchStart={handleOnClick}
             id='spot-2'
           >
-            <span className='playerInitials'>{players[1]}</span>
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-2'
+            >
+              {players[1]}
+            </span>
           </div>
         </div>
         <div className='spot spot-3'>
@@ -75,7 +89,14 @@ const IndexPage = () => {
             onTouchStart={handleOnClick}
             id='spot-3'
           >
-            <span className='playerInitials'>{players[2]}</span>
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-3'
+            >
+              {players[2]}
+            </span>
           </div>
         </div>
         <div className='spot spot-4'>
@@ -85,7 +106,14 @@ const IndexPage = () => {
             onTouchStart={handleOnClick}
             id='spot-4'
           >
-            <span className='playerInitials'>{players[3]}</span>
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-4'
+            >
+              {players[3]}
+            </span>
           </div>
         </div>
         <div className='spot spot-5'>
@@ -95,7 +123,14 @@ const IndexPage = () => {
             onTouchStart={handleOnClick}
             id='spot-5'
           >
-            <span className='playerInitials'>{players[4]}</span>
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-5'
+            >
+              {players[4]}
+            </span>
           </div>
         </div>
         <div className='spot spot-10'>
@@ -105,7 +140,14 @@ const IndexPage = () => {
             onTouchStart={handleOnClick}
             id='spot-10'
           >
-            <span className='playerInitials'>{players[9]}</span>
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-10'
+            >
+              {players[9]}
+            </span>
           </div>
         </div>
         <div className='spot spot-9'>
@@ -115,7 +157,14 @@ const IndexPage = () => {
             onTouchStart={handleOnClick}
             id='spot-9'
           >
-            <span className='playerInitials'>{players[8]}</span>
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-9'
+            >
+              {players[8]}
+            </span>
           </div>
         </div>
         <div className='spot spot-8'>
@@ -125,7 +174,14 @@ const IndexPage = () => {
             onTouchStart={handleOnClick}
             id='spot-8'
           >
-            <span className='playerInitials'>{players[7]}</span>
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-8'
+            >
+              {players[7]}
+            </span>
           </div>
         </div>
         <div className='spot spot-7'>
@@ -135,7 +191,14 @@ const IndexPage = () => {
             onTouchStart={handleOnClick}
             id='spot-7'
           >
-            <span className='playerInitials'>{players[6]}</span>
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-7'
+            >
+              {players[6]}
+            </span>
           </div>
         </div>
         <div className='spot spot-6'>
@@ -145,7 +208,14 @@ const IndexPage = () => {
             onTouchStart={handleOnClick}
             id='spot-6'
           >
-            <span className='playerInitials'>{players[5]}</span>
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-6'
+            >
+              {players[5]}
+            </span>
           </div>
         </div>
       </div>
