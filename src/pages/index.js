@@ -49,52 +49,102 @@ const IndexPage = () => {
       </h1>
       <div className='court'>
         <div className='spot spot-1'>
-          <div className='player' onClick={handleOnClick} id='spot-1'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-1'
+          >
             <span className='playerInitials'>{players[0]}</span>
           </div>
         </div>
         <div className='spot spot-2'>
-          <div className='player' onClick={handleOnClick} id='spot-2'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-2'
+          >
             <span className='playerInitials'>{players[1]}</span>
           </div>
         </div>
         <div className='spot spot-3'>
-          <div className='player' onClick={handleOnClick} id='spot-3'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-3'
+          >
             <span className='playerInitials'>{players[2]}</span>
           </div>
         </div>
         <div className='spot spot-4'>
-          <div className='player' onClick={handleOnClick} id='spot-4'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-4'
+          >
             <span className='playerInitials'>{players[3]}</span>
           </div>
         </div>
         <div className='spot spot-5'>
-          <div className='player' onClick={handleOnClick} id='spot-5'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-5'
+          >
             <span className='playerInitials'>{players[4]}</span>
           </div>
         </div>
         <div className='spot spot-10'>
-          <div className='player' onClick={handleOnClick} id='spot-10'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-10'
+          >
             <span className='playerInitials'>{players[9]}</span>
           </div>
         </div>
         <div className='spot spot-9'>
-          <div className='player' onClick={handleOnClick} id='spot-9'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-9'
+          >
             <span className='playerInitials'>{players[8]}</span>
           </div>
         </div>
         <div className='spot spot-8'>
-          <div className='player' onClick={handleOnClick} id='spot-8'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-8'
+          >
             <span className='playerInitials'>{players[7]}</span>
           </div>
         </div>
         <div className='spot spot-7'>
-          <div className='player' onClick={handleOnClick} id='spot-7'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-7'
+          >
             <span className='playerInitials'>{players[6]}</span>
           </div>
         </div>
         <div className='spot spot-6'>
-          <div className='player' onClick={handleOnClick} id='spot-6'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-6'
+          >
             <span className='playerInitials'>{players[5]}</span>
           </div>
         </div>
