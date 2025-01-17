@@ -21,6 +21,7 @@ const IndexPage = () => {
     setCurrentPlayer('');
     setIsDisabled(isDisabled ? !isDisabled : isDisabled);
     setCurrentPlayer(parseInt(e.target.id.slice(5)));
+    document.getElementById('initials').focus();
     console.log(parseInt(e.target.id.slice(5)) - 1);
   };
 
@@ -29,7 +30,7 @@ const IndexPage = () => {
     console.log(e.target[0].value);
 
     let updatedPlayers = players;
-    updatedPlayers[currentPlayer - 1] = e.target[0].value;
+    updatedPlayers[currentPlayer - 1] = e.target[0].value.toUpperCase();
     setPlayers[updatedPlayers];
     document.forms[0].reset();
     setIsDisabled(!isDisabled);
