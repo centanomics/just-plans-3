@@ -14,6 +14,8 @@ const IndexPage = () => {
     '',
     '',
     '',
+    '',
+    '',
   ]);
   const [isDisabled, setIsDisabled] = useState(true);
   const [currentPlayer, setCurrentPlayer] = useState('');
@@ -139,6 +141,74 @@ const IndexPage = () => {
             </span>
           </div>
         </div>
+        <div className='spot spot-6'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-6'
+          >
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-6'
+            >
+              {players[5]}
+            </span>
+          </div>
+        </div>
+        <div className='spot spot-7'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-7'
+          >
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-7'
+            >
+              {players[6]}
+            </span>
+          </div>
+        </div>
+        <div className='spot spot-12'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-12'
+          >
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-12'
+            >
+              {players[11]}
+            </span>
+          </div>
+        </div>
+        <div className='spot spot-11'>
+          <div
+            className='player'
+            onClick={handleOnClick}
+            onTouchStart={handleOnClick}
+            id='spot-11'
+          >
+            <span
+              className='playerInitials'
+              onClick={handleOnClick}
+              onTouchStart={handleOnClick}
+              id='spat-11'
+            >
+              {players[10]}
+            </span>
+          </div>
+        </div>
         <div className='spot spot-10'>
           <div
             className='player'
@@ -187,40 +257,6 @@ const IndexPage = () => {
               id='spat-8'
             >
               {players[7]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-7'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-7'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-7'
-            >
-              {players[6]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-6'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-6'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-6'
-            >
-              {players[5]}
             </span>
           </div>
         </div>

@@ -35,7 +35,7 @@ main {
 /* Court stuffs*/
 .court {
   display: grid;
-  grid-template-rows: 100px 200px;
+  grid-template-rows: 100px 100px 100px;
   grid-template-columns: 100px 100px 100px 100px 100px;
   justify-content:stretch;
   align-content: stretch;
@@ -45,25 +45,53 @@ main {
   background-color: var(--court-color);
 }
 
-.spot-1, .spot-5, .spot-6, .spot-10 {
+.spot-1, .spot-5, .spot-6, .spot-7 .spot-11, .spot-12 {
   background-color: var(--out-color);
 }
 
-.spot-1, .spot-2, .spot-3, .spot-4, .spot-5, .spot-7, .spot-8, .spot-9 {
+.spot.spot-7, .spot.spot-11 {
+  background-color: var(--out-color);
+}
+
+.spot-1, .spot-2, .spot-3, .spot-4, .spot-5, .spot-8, .spot-9, .spot-10 {
   border-top: 5px solid var(--line-color);
 }
 
-.spot-1, .spot-10 {
+.spot-4, .spot-8 {
   border-right: 5px solid var(--line-color);
 }
 
-.spot-5, .spot-6 {
+.spot-2, .spot-10 {
   border-left: 5px solid var(--line-color);
 }
 
-.spot-7, .spot-8, .spot-9 {
+.spot-8, .spot-9, .spot-10 {
   border-bottom: 5px solid var(--line-color);
 }
+
+.spot-8 {
+  grid-column: 4;
+  grid-row: third-line / 2;
+}
+.spot-9 {
+  grid-column: 3;
+  grid-row: third-line / 2;
+}
+.spot-10 {
+  grid-column: 2;
+  grid-row: third-line / 2;
+}
+
+.spot-6 {
+  grid-column: 5;
+  grid-row: 2;
+}
+
+.spot-7 {
+  grid-column: 5;
+  grid-row: 3;
+}
+
 
 /*player stuff*/
 .player {
@@ -92,7 +120,7 @@ main {
   /* clearing court lines and resetting the grid for mobile*/
   .court {
     display: grid;
-    grid-template-columns: 200px 100px;
+    grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px 100px 100px;
     justify-content:stretch;
     align-content: stretch;
@@ -106,70 +134,78 @@ main {
     margin: 0;
   } */
 
-  .spot-1, .spot-2, .spot-3, .spot-4, .spot-5, .spot-7, .spot-8, .spot-9 {
+  .spot-1, .spot-2, .spot-3, .spot-4, .spot-5, .spot-8, .spot-9, .spot-10 {
     border-right: 5px solid var(--line-color);
   }
 
-  .spot-1, .spot-10 {
+  .spot-4, .spot-8 {
     border-bottom: 5px solid var(--line-color);
   }
   
-  .spot-5, .spot-6 {
+  .spot-2, .spot-10 {
     border-top: 5px solid var(--line-color);
   }
   
-  .spot-7, .spot-8, .spot-9 {
+  .spot-8, .spot-9, .spot-10 {
     border-left: 5px solid var(--line-color);
   }
 
 /* reordering the spots accordingly for mobile */
   .spot-1 {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 1;
   }
 
   .spot-2 {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 2;
   }
 
   .spot-3 {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 3;
   }
 
   .spot-4 {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 4;
   }
 
   .spot-5 {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 5;
   }
 
   .spot-6 {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 5;
   }
 
   .spot-7 {
     grid-column: 1;
-    grid-row: 4;
+    grid-row: 5;
   }
 
   .spot-8 {
-    grid-column: 1;
-    grid-row: 3;
+    grid-column: 1 / span 2;
+    grid-row: 4;
   }
 
   .spot-9 {
-    grid-column: 1;
-    grid-row: 2;
+    grid-column: 1 / span 2;
+    grid-row: 3;
   }
 
   .spot-10 {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+  .spot-11 {
     grid-column: 1;
+    grid-row: 1;
+  }
+  .spot-12 {
+    grid-column: 2;
     grid-row: 1;
   }
 }
