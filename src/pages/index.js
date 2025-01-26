@@ -50,7 +50,11 @@ const IndexPage = () => {
     const newPlayer = {
       name: e.target[0].value,
       position: currentPlayer,
-      initials: e.target[0].value.match(re).join(''),
+      initials: e.target[0].value
+        .split(' ')
+        .map((word) => word[0])
+        .join('')
+        .toUpperCase(),
     };
 
     const playerExists = updatedPlayers.findIndex(
