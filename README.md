@@ -79,7 +79,6 @@
 
 [![Just Plans Screen Shot][product-screenshot]](https://just-plans-3.netlify.app/)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
@@ -104,7 +103,7 @@ To get a local copy up and running follow these simple steps.
 - gatsby-cli
   ```sh
   npm install gatsby-cli -g
-  ```  
+  ```
 
 ### Installation
 
@@ -113,9 +112,9 @@ To get a local copy up and running follow these simple steps.
    git clone https://github.com/centanomics/just-plans-3
    ```
 2. cd into the created project
-	```sh
-	cd just-plans-3
-	```
+   ```sh
+   cd just-plans-3
+   ```
 3. Install NPM packages
    ```sh
    npm install
@@ -133,12 +132,12 @@ To get a local copy up and running follow these simple steps.
 ## Usage
 
 1. You can add a users full name to a spot, then it will show up in said spot with their initials filling the space
-	- Click on a white circle ![Click on a white circle](./usage/1-1.png)
-	- Enter the players name in the input ![Enter the players name in the input](./usage/1-2.png)
-	- Click Add player to add that players initials to the court ![Hit Add player to add that players initials to the court](./usage/1-3.png)
+   - Click on a white circle ![Click on a white circle](./usage/1-1.png)
+   - Enter the players name in the input ![Enter the players name in the input](./usage/1-2.png)
+   - Click Add player to add that players initials to the court ![Hit Add player to add that players initials to the court](./usage/1-3.png)
 2. Once two or more spots are filled out you can then rotate the players (follows a clockwise rotation)
-	- Click on the rotate button ![Click on the rotate button](./usage/2-1.png)
-	- All of the players have rotated once clockwise ![All of the players have rotated once clockwise](./usage/2-2.png)
+   - Click on the rotate button ![Click on the rotate button](./usage/2-1.png)
+   - All of the players have rotated once clockwise ![All of the players have rotated once clockwise](./usage/2-2.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -200,7 +199,7 @@ Project Link: [https://github.com/centanomics/just-plans-3](https://github.com/c
 
 ## Acknowledgments
 
-- My Friend Andrew for complaining about how mid volleyball tools were
+- My Friend Andrew for complaining about how bad volleyball planning tools were
 - The sport of Volleyball
 - The Bird high in the sky who "stress tests" my site
 
@@ -226,4 +225,3 @@ Project Link: [https://github.com/centanomics/just-plans-3](https://github.com/c
 [Gatsby-url]: https://www.gatsbyjs.com/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-
