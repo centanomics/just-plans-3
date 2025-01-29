@@ -77,9 +77,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started. To avoid retyping too much info, do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`, `project_license`
+[![Just Plans Screen Shot][product-screenshot]](https://just-plans-3.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,7 +103,7 @@ To get a local copy up and running follow these simple steps.
 - gatsby-cli
   ```sh
   npm install gatsby-cli -g
-  ```  
+  ```
 
 ### Installation
 
@@ -114,9 +112,9 @@ To get a local copy up and running follow these simple steps.
    git clone https://github.com/centanomics/just-plans-3
    ```
 2. cd into the created project
-	```sh
-	cd just-plans-3
-	```
+   ```sh
+   cd just-plans-3
+   ```
 3. Install NPM packages
    ```sh
    npm install
@@ -133,9 +131,13 @@ To get a local copy up and running follow these simple steps.
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+1. You can add a users full name to a spot, then it will show up in said spot with their initials filling the space
+   - Click on a white circle ![Click on a white circle](./usage/1-1.png)
+   - Enter the players name in the input ![Enter the players name in the input](./usage/1-2.png)
+   - Click Add player to add that players initials to the court ![Hit Add player to add that players initials to the court](./usage/1-3.png)
+2. Once two or more spots are filled out you can then rotate the players (follows a clockwise rotation)
+   - Click on the rotate button ![Click on the rotate button](./usage/2-1.png)
+   - All of the players have rotated once clockwise ![All of the players have rotated once clockwise](./usage/2-2.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -172,7 +174,7 @@ Don't forget to give the project a star! Thanks again!
 ### Top contributors:
 
 <a href="https://github.com/centanomics/just-plans-3/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=github_username/repo_name" alt="contrib.rocks image" />
+  <img src="https://contrib.rocks/image?repo=centanomics/just-plans-3" alt="contrib.rocks image" />
 </a>
 
 <!-- LICENSE -->
@@ -187,7 +189,7 @@ Distributed under the GNU General Public License v3.0. See `LICENSE.txt` for mor
 
 ## Contact
 
-Your Name - [@centanomics](https://twitter.com/centanomics) - centanomics@gmail.com
+Cent - [@centanomics](https://twitter.com/centanomics) - centanomics@gmail.com
 
 Project Link: [https://github.com/centanomics/just-plans-3](https://github.com/centanomics/just-plans-3)
 
@@ -197,9 +199,9 @@ Project Link: [https://github.com/centanomics/just-plans-3](https://github.com/c
 
 ## Acknowledgments
 
-- []()
-- []()
-- []()
+- My Friend Andrew for complaining about how bad volleyball planning tools were
+- The sport of Volleyball
+- The Bird high in the sky who "stress tests" my site
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -218,9 +220,8 @@ Project Link: [https://github.com/centanomics/just-plans-3](https://github.com/c
 [license-url]: https://github.com/centanomics/just-plans-3/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: ./usage/1-1.png
 [Gatsby]: https://img.shields.io/badge/Gatsby-663399?style=for-the-badge&logo=gatsby&logoColor=white
 [Gatsby-url]: https://www.gatsbyjs.com/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-
