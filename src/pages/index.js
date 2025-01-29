@@ -3,7 +3,7 @@ import { useState } from 'react';
 import rotate from '../utils/rotate';
 
 const IndexPage = () => {
-  const [players, setPlayers] = useState([
+  const [detPlayers, setDetPlayers] = useState([
     '',
     '',
     '',
@@ -17,37 +17,71 @@ const IndexPage = () => {
     '',
     '',
   ]);
+  const [players, setPlayers] = useState([]);
   const [isDisabled, setIsDisabled] = useState(true);
+  const [willRotate, setWillRotate] = useState(true);
   const [currentPlayer, setCurrentPlayer] = useState('');
   const handleOnClick = (e) => {
     setCurrentPlayer('');
     setIsDisabled(isDisabled ? !isDisabled : isDisabled);
     setCurrentPlayer(parseInt(e.target.id.slice(5)));
 
-    if (players[e.target.id.slice(5) - 1]) {
-      document.getElementById('initials').value =
-        players[e.target.id.slice(5) - 1];
-    }
+    const playerExists = players.filter(
+      (player) => player.position === parseInt(e.target.id.slice(5))
+    );
+    // console.log('pl', playerExists);
+
+    document.getElementById('initials').value =
+      playerExists.length !== 0 ? playerExists[0].name : '';
 
     document.getElementById('initials').focus();
-    console.log(parseInt(e.target.id.slice(5)) - 1);
+    console.log('index', parseInt(e.target.id.slice(5)) - 1);
   };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target[0].value);
+    // console.log(e.target[0].value);
 
     let updatedPlayers = players;
-    updatedPlayers[currentPlayer - 1] = e.target[0].value.toUpperCase();
-    setPlayers[updatedPlayers];
+    // console.log('pre', updatedPlayers);
+
+    const re = /\b[a-zA-Z]/g;
+
+    const newPlayer = {
+      name: e.target[0].value,
+      position: currentPlayer,
+      initials: e.target[0].value
+        .split(' ')
+        .map((word) => word[0])
+        .join('')
+        .toUpperCase(),
+    };
+
+    const playerExists = updatedPlayers.findIndex(
+      (player) => player.position === newPlayer.position
+    );
+    if (playerExists !== -1) {
+      updatedPlayers.splice(playerExists, 1);
+      // console.log('post', updatedPlayers);
+      updatedPlayers.push(newPlayer);
+      // console.log('post2', updatedPlayers);
+    } else {
+      updatedPlayers.push(newPlayer);
+    }
+    // updatedPlayers.push(newPlayer);
+    // console.log('new', newPlayer);
+
+    setPlayers(updatedPlayers.sort((a, b) => a.position - b.position));
     document.forms[0].reset();
     setIsDisabled(!isDisabled);
   };
 
   const rotatePlayers = () => {
-    let updatedPlayers = players;
-    updatedPlayers = rotate(updatedPlayers);
-    setPlayers(updatedPlayers);
+    document.forms[0].reset();
+    let rotatedPlayers = players;
+    rotatedPlayers = rotate(rotatedPlayers);
+    setPlayers(rotatedPlayers);
+    setWillRotate(!willRotate);
   };
 
   return (
@@ -56,219 +90,38 @@ const IndexPage = () => {
         Just <span className='teamColor'>Plans</span>
       </h1>
       <div className='court'>
-        <div className='spot spot-1'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-1'
-          >
-            <span
-              className='playerInitials'
+        {detPlayers.map((playerz, index) => (
+          <div className={'spot spot-' + (index + 1)} key={index}>
+            <div
+              className='player'
               onClick={handleOnClick}
               onTouchStart={handleOnClick}
-              id='spat-1'
+              id={'spot-' + (index + 1)}
             >
-              {players[0]}
-            </span>
+              <span
+                className='playerInitials'
+                onClick={handleOnClick}
+                onTouchStart={handleOnClick}
+                id={'spat-' + (index + 1)}
+              >
+                {players.findIndex(
+                  (player) => player.position - 1 === index
+                ) !== -1
+                  ? players.filter((player) => player.position - 1 === index)[0]
+                      .initials
+                  : ''}
+              </span>
+            </div>
           </div>
-        </div>
-        <div className='spot spot-2'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-2'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-2'
-            >
-              {players[1]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-3'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-3'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-3'
-            >
-              {players[2]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-4'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-4'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-4'
-            >
-              {players[3]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-5'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-5'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-5'
-            >
-              {players[4]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-6'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-6'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-6'
-            >
-              {players[5]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-7'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-7'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-7'
-            >
-              {players[6]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-12'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-12'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-12'
-            >
-              {players[11]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-11'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-11'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-11'
-            >
-              {players[10]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-10'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-10'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-10'
-            >
-              {players[9]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-9'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-9'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-9'
-            >
-              {players[8]}
-            </span>
-          </div>
-        </div>
-        <div className='spot spot-8'>
-          <div
-            className='player'
-            onClick={handleOnClick}
-            onTouchStart={handleOnClick}
-            id='spot-8'
-          >
-            <span
-              className='playerInitials'
-              onClick={handleOnClick}
-              onTouchStart={handleOnClick}
-              id='spat-8'
-            >
-              {players[7]}
-            </span>
-          </div>
-        </div>
+        ))}
       </div>
       <div>
         <form onSubmit={handleOnSubmit}>
           <input
             type='text'
             id='initials'
-            maxLength='2'
             name='initials'
-            placeholder={'Enter Player ' + currentPlayer + ' Initals'}
+            placeholder={'Enter Player ' + currentPlayer + ' Name'}
             disabled={isDisabled}
           />
           <button type='submit' disabled={isDisabled}>
