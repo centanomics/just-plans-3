@@ -21,6 +21,10 @@ const IndexPage = () => {
   const [isDisabled, setIsDisabled] = useState(true);
   const [willRotate, setWillRotate] = useState(true);
   const [currentPlayer, setCurrentPlayer] = useState('');
+  const [playerName, setPlayerName] = useState('');
+  const handleOnChange = (e) => {
+    setPlayerName(e.target.value)
+  }
   const handleOnClick = (e) => {
     setCurrentPlayer('');
     setIsDisabled(isDisabled ? !isDisabled : isDisabled);
@@ -31,8 +35,7 @@ const IndexPage = () => {
     );
     // console.log('pl', playerExists);
 
-    document.getElementById('initials').value =
-      playerExists.length !== 0 ? playerExists[0].name : '';
+    setPlayerName(playerExists.length !== 0 ? playerExists[0].name : '');
 
     document.getElementById('initials').focus();
     console.log('index', parseInt(e.target.id.slice(5)) - 1);
@@ -48,7 +51,7 @@ const IndexPage = () => {
     const re = /\b[a-zA-Z]/g;
 
     const newPlayer = {
-      name: e.target[0].value,
+      name: playerName,
       position: currentPlayer,
       initials: e.target[0].value
         .split(' ')
@@ -72,7 +75,7 @@ const IndexPage = () => {
     // console.log('new', newPlayer);
 
     setPlayers(updatedPlayers.sort((a, b) => a.position - b.position));
-    document.forms[0].reset();
+    setPlayerName('');
     setIsDisabled(!isDisabled);
   };
 
@@ -123,6 +126,8 @@ const IndexPage = () => {
             name='initials'
             placeholder={'Enter Player ' + currentPlayer + ' Name'}
             disabled={isDisabled}
+            value={playerName}
+            onChange={handleOnChange}
           />
           <button type='submit' disabled={isDisabled}>
             Add Player
