@@ -70,14 +70,13 @@ const IndexPage = () => {
       updatedPlayers.splice(playerExists, 1);
     } else if (playerExists !== -1) {
       updatedPlayers.splice(playerExists, 1);
-      // console.log('post', updatedPlayers);
+     
       updatedPlayers.push(newPlayer);
-      // console.log('post2', updatedPlayers);
+      
     } else {
       updatedPlayers.push(newPlayer);
     }
-    // updatedPlayers.push(newPlayer);
-    // console.log('new', newPlayer);
+  
 
     setPlayers(updatedPlayers.sort((a, b) => a.position - b.position));
     setPlayerName('');
