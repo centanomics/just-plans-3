@@ -38,7 +38,7 @@ const IndexPage = () => {
     setPlayerName(playerExists.length !== 0 ? playerExists[0].name : '');
 
     document.getElementById('initials').focus();
-    console.log('index', parseInt(e.target.id.slice(5)) - 1);
+    //console.log('index', parseInt(e.target.id.slice(5)) - 1);
   };
 
   const handleOnSubmit = (e) => {
@@ -49,6 +49,8 @@ const IndexPage = () => {
     // console.log('pre', updatedPlayers);
 
     const re = /\b[a-zA-Z]/g;
+    
+    
 
     const newPlayer = {
       name: playerName,
@@ -63,7 +65,10 @@ const IndexPage = () => {
     const playerExists = updatedPlayers.findIndex(
       (player) => player.position === newPlayer.position
     );
-    if (playerExists !== -1) {
+    
+    if (playerName === '') {
+      updatedPlayers.splice(playerExists, 1);
+    } else if (playerExists !== -1) {
       updatedPlayers.splice(playerExists, 1);
       // console.log('post', updatedPlayers);
       updatedPlayers.push(newPlayer);
@@ -81,6 +86,7 @@ const IndexPage = () => {
 
   const rotatePlayers = () => {
     document.forms[0].reset();
+    setIsDisabled(true);
     let rotatedPlayers = players;
     rotatedPlayers = rotate(rotatedPlayers);
     setPlayers(rotatedPlayers);
