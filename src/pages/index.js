@@ -22,6 +22,7 @@ const IndexPage = () => {
   const [willRotate, setWillRotate] = useState(true);
   const [currentPlayer, setCurrentPlayer] = useState('');
   const [playerName, setPlayerName] = useState('');
+  const [playerExistss, setPlayerExists] = useState(false);
   const handleOnChange = (e) => {
     setPlayerName(e.target.value)
   }
@@ -33,6 +34,9 @@ const IndexPage = () => {
     const playerExists = players.filter(
       (player) => player.position === parseInt(e.target.id.slice(5))
     );
+    setPlayerExists(playerExists.length === 0 ? true : false);
+    // console.log(playerExists, playerExistss)
+    // console.log(playerExists.length, playerExistss);
     // console.log('pl', playerExists);
 
     setPlayerName(playerExists.length !== 0 ? playerExists[0].name : '');
@@ -81,6 +85,7 @@ const IndexPage = () => {
     setPlayers(updatedPlayers.sort((a, b) => a.position - b.position));
     setPlayerName('');
     setIsDisabled(!isDisabled);
+    setPlayerExists(true);
   };
 
   const rotatePlayers = () => {
@@ -135,7 +140,7 @@ const IndexPage = () => {
             onChange={handleOnChange}
           />
           <button type='submit' disabled={isDisabled}>
-            Add Player
+            {(!playerExistss && playerName ==='') ? 'Remove' : (!playerExistss) ? 'Edit' : 'Add'} Player
           </button>
         </form>
         <button onClick={rotatePlayers}>Rotate</button>
