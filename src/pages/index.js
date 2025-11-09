@@ -104,7 +104,12 @@ const IndexPage = () => {
       </h1>
       <div className='court'>
         {detPlayers.map((playerz, index) => (
-          <div className={'spot spot-' + (index + 1)} key={index}>
+          <div className={'spot spot-' + (index + 1)} key={index} title={players.findIndex(
+                  (player) => player.position - 1 === index
+                ) !== -1
+                  ? players.filter((player) => player.position - 1 === index)[0]
+                      .name
+                  : ''}>
             <div
               className='player'
               onClick={handleOnClick}
