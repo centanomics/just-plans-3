@@ -2,6 +2,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import rotate from '../utils/rotate';
 
+import Alert from '../components/Alert';
+
 const IndexPage = () => {
   const [detPlayers, setDetPlayers] = useState([
     '',
@@ -52,10 +54,17 @@ const IndexPage = () => {
     let updatedPlayers = players;
     // console.log('pre', updatedPlayers);
 
-    const re = /\b[a-zA-Z]/g;
+    // Form Verification - two words with no numbers or special characters
+    // will work on later but should only work with add or edit players
+    const re = /[\w'-]+\s[\w'-]+/g;
+    // console.log(e.target[0].value, re.exec(e.target[0].value)[0])
+    // console.log(!re.exec(e.target[0].value))
+    if(e.target[0].value !== re.exec(e.target[0].value)[0]) {
+      // console.log('Need to have at least two names boss')
+      return;
+    }
     
-    
-
+    // creating new player to add to player list
     const newPlayer = {
       name: playerName,
       position: currentPlayer,
@@ -86,6 +95,7 @@ const IndexPage = () => {
     setPlayerName('');
     setIsDisabled(!isDisabled);
     setPlayerExists(true);
+    // return;
   };
 
   const rotatePlayers = () => {
@@ -104,12 +114,7 @@ const IndexPage = () => {
       </h1>
       <div className='court'>
         {detPlayers.map((playerz, index) => (
-          <div className={'spot spot-' + (index + 1)} key={index} title={players.findIndex(
-                  (player) => player.position - 1 === index
-                ) !== -1
-                  ? players.filter((player) => player.position - 1 === index)[0]
-                      .name
-                  : ''}>
+          <div className={'spot spot-' + (index + 1)} key={index} title={players[index - 1] ? players[index - 1].name : ''}>
             <div
               className='player'
               onClick={handleOnClick}
@@ -122,12 +127,7 @@ const IndexPage = () => {
                 onTouchStart={handleOnClick}
                 id={'spat-' + (index + 1)}
               >
-                {players.findIndex(
-                  (player) => player.position - 1 === index
-                ) !== -1
-                  ? players.filter((player) => player.position - 1 === index)[0]
-                      .initials
-                  : ''}
+                {players[index - 1] ? players[index - 1].initials : ''}
               </span>
             </div>
           </div>
